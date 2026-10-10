@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#ff00ff">
+<title>THE DANK DIMENSION // MLG MEME ARCHIVE</title>
+<style>
+:root{--pink:#ff00e6;--lime:#b6ff00;--cyan:#00f6ff;--yellow:#fff600;--red:#ff2638;--ink:#080014;--panel:#15002a;--line:3px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:#100020;color:#fff;font-family:"Comic Sans MS",cursive;overflow-x:hidden;cursor:crosshair}
+body::before{content:"";position:fixed;inset:0;z-index:-3;background:repeating-linear-gradient(135deg,#24003a 0 18px,#0c3b26 18px 36px,#24113b 36px 54px);background-size:180% 180%;animation:bgcrawl 18s linear infinite}
+body::after{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background:radial-gradient(circle at 15% 25%,#ff00e622,transparent 25%),radial-gradient(circle at 80% 70%,#00f6ff22,transparent 30%);mix-blend-mode:screen}
+@keyframes bgcrawl{to{background-position:180% 180%}}
+@keyframes rainbow{0%{filter:hue-rotate(0)}100%{filter:hue-rotate(360deg)}}
+@keyframes wobble{0%,100%{transform:rotate(-1deg) scale(1)}50%{transform:rotate(1deg) scale(1.015)}}
+@keyframes marquee{to{transform:translateX(-50%)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{50%{text-shadow:4px 4px #ff003c,-4px -4px #00f6ff,0 0 24px #ff00e6}}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-18px) rotate(8deg)}}
+@keyframes flash{0%,100%{opacity:1}50%{opacity:.2}}
+@keyframes shake{0%,100%{transform:translate(0)}20%{transform:translate(5px,-3px)}40%{transform:translate(-4px,3px)}60%{transform:translate(3px,4px)}80%{transform:translate(-3px,-2px)}}
+@keyframes reveal{0%{transform:scale(.2) rotate(-10deg);opacity:0}100%{transform:scale(1) rotate(0);opacity:1}}
+@keyframes laser{0%{transform:translateX(-120%) rotate(-20deg)}100%{transform:translateX(120vw) rotate(-20deg)}}
+a{color:var(--cyan)}button,input,select,textarea{font:inherit}button{cursor:pointer;color:#fff;background:linear-gradient(135deg,#f000ff,#5d00ff);border:2px solid #fff;box-shadow:4px 4px 0 #000;padding:.65rem .8rem;font-weight:900;text-transform:uppercase;text-shadow:1px 1px #000}button:hover{filter:hue-rotate(75deg) brightness(1.2);transform:translate(-1px,-1px)}button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:3px dashed var(--yellow);outline-offset:3px}
+button.secondary{background:linear-gradient(135deg,#006b65,#0035b8)}button.danger{background:linear-gradient(135deg,#f00,#900)}button.small{font-size:.76rem;padding:.4rem .5rem}input,select,textarea{background:#05000d;color:#baffff;border:2px solid var(--cyan);padding:.65rem;min-width:0;max-width:100%}
+.topbar{position:sticky;top:0;z-index:50;background:#07000eeF;border-bottom:3px solid var(--lime);box-shadow:0 5px 0 #ff00e6;backdrop-filter:blur(8px)}
+.marquee{height:30px;overflow:hidden;background:#faff00;color:#080014;font-family:Impact,sans-serif;font-size:18px;white-space:nowrap}
+.marquee-track{display:inline-flex;width:max-content;animation:marquee 30s linear infinite}.marquee-track span{padding-right:4rem}.marquee.paused .marquee-track{animation-play-state:paused}
+nav{display:flex;gap:.4rem;align-items:center;overflow-x:auto;padding:.55rem max(12px,calc((100vw - 1400px)/2));scrollbar-width:thin}nav a{flex:none;text-decoration:none;border:1px solid var(--pink);padding:.4rem .55rem;background:#21003b;color:var(--yellow);font:bold 13px "Courier New",monospace}nav a:hover{background:var(--pink);color:#000}
+main{max-width:1500px;margin:auto;padding:18px}
+.hero{position:relative;overflow:hidden;text-align:center;border:5px ridge var(--cyan);padding:clamp(1.5rem,5vw,4rem) 1rem;margin:14px 0 22px;background:linear-gradient(120deg,#230044eF,#002e37eF,#40002eeF);box-shadow:0 0 22px var(--pink),inset 0 0 28px #00f6ff44}
+.hero::before{content:"★ ✦ ★ ✦ ★ ✦ ★ ✦ ★ ✦ ★ ✦ ★ ✦ ★";position:absolute;top:8px;left:-10%;width:120%;font-size:24px;color:#ff0;letter-spacing:1rem;opacity:.5;animation:marquee 16s linear infinite}
+.hero h1{font:clamp(2.4rem,7vw,6.7rem)/.95 Impact,Haettenschweiler,sans-serif;margin:1.3rem 0;color:#fff;text-shadow:5px 5px #ff00e6,-5px -3px #00f6ff,0 0 24px #fff;animation:pulse 2s infinite alternate}
+.hero .subtitle{font:bold clamp(.8rem,2vw,1.15rem) "Courier New",monospace;color:var(--lime);text-shadow:2px 2px #000}
+.stamp{display:inline-block;color:#ff0;border:4px double #ff0;padding:.4rem .7rem;transform:rotate(-8deg);font: bold 1.3rem Impact,sans-serif;animation:wobble 1s infinite}
+.floating{position:absolute;pointer-events:none;font-size:clamp(1.6rem,4vw,3.2rem);opacity:.6;animation:floaty 3s ease-in-out infinite}.f1{left:3%;top:28%}.f2{right:5%;top:34%;animation-delay:.7s}.f3{right:12%;bottom:6%;animation-delay:1.2s}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.layout{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:16px;align-items:start}
+.panel{border:3px ridge var(--pink);background:linear-gradient(135deg,#12001ff5,#080a20f5);box-shadow:6px 6px 0 #000;padding:14px;margin-bottom:18px;min-width:0}
+.panel h2,.section-title{font:clamp(1.4rem,3vw,2.1rem) Impact,sans-serif;color:var(--yellow);text-shadow:3px 3px #f000ff;margin:.2rem 0 .8rem;letter-spacing:.04em}
+.section-head{display:flex;justify-content:space-between;gap:12px;align-items:end;flex-wrap:wrap;margin:20px 0 12px}
+.section-head p{margin:.2rem 0;color:#c9fffc}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.stat{background:#000b;border:2px dashed var(--lime);padding:10px;text-align:center;font:12px "Courier New",monospace;color:var(--cyan)}.stat strong{display:block;font-size:1.2rem;color:#ff0;margin-top:4px}
+.health{height:14px;background:#240020;border:2px solid #fff;overflow:hidden}.health span{display:block;height:100%;width:1%;background:linear-gradient(90deg,#ff003c,#ff0,#00ff62);transition:width .5s}
+.actions{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:1.2rem 0}.searchrow{display:grid;grid-template-columns:minmax(150px,2fr) repeat(3,minmax(110px,1fr));gap:8px;margin:10px 0}
+.meme-card{position:relative;border:3px solid var(--cyan);background:linear-gradient(135deg,#1e003a,#051d2c);padding:10px;min-width:0;box-shadow:4px 4px 0 #000;transition:transform .18s,box-shadow .18s;animation:reveal .3s ease both;overflow:hidden}
+.meme-card:nth-child(3n){border-color:var(--pink);transform:rotate(.25deg)}.meme-card:nth-child(4n){border-color:var(--lime);transform:rotate(-.3deg)}.meme-card:hover{z-index:2;transform:scale(1.035) rotate(1deg);box-shadow:0 0 20px var(--pink),6px 6px 0 #000}
+.meme-art{height:132px;display:grid;place-items:center;position:relative;overflow:hidden;background:repeating-conic-gradient(#29003d 0 25%,#001c2b 0 50%) 50%/28px 28px;border:2px inset #fff;margin-bottom:8px}.meme-art .emoji{font-size:clamp(2.4rem,5vw,4rem);filter:drop-shadow(3px 3px #ff00e6);animation:wobble 3s infinite}.meme-art .caption{position:absolute;bottom:4px;left:4px;right:4px;font: bold 11px Impact,sans-serif;text-align:center;color:#fff;text-shadow:2px 2px #000}
+.meme-card h3{font:1.25rem Impact,sans-serif;color:#ff0;margin:.35rem 0}.meta{display:flex;flex-wrap:wrap;gap:5px;font:10px "Courier New",monospace;margin-bottom:6px}.tag{padding:3px 5px;background:#f0f;color:#000;font-weight:bold}.rarity{background:#003d4c;color:#aaffff;border:1px solid #00f6ff;padding:2px 5px}.desc{font-size:.88rem;min-height:2.5em;margin:.4rem 0;color:#e5d9ff}.card-actions{display:flex;gap:5px;flex-wrap:wrap}.card-actions button{font-size:.68rem;padding:.38rem .45rem;flex:1}
+.soundboard{position:sticky;top:110px}.soundgrid{display:grid;grid-template-columns:1fr 1fr;gap:6px}.soundgrid button{font-size:.72rem;min-height:42px;padding:.45rem .3rem;background:linear-gradient(135deg,#a000b5,#1a0057)}.soundgrid button.playing{background:#f00;animation:flash .4s infinite}
+.volume{width:100%;accent-color:#ff00e6}.meter{height:12px;background:#160016;border:1px solid #fff;margin:7px 0;overflow:hidden}.meter span{display:block;width:3%;height:100%;background:linear-gradient(90deg,#00ff62,#ff0,#f00);transition:width .15s}
+.hidden{display:none!important}.notice{font:12px "Courier New",monospace;color:var(--lime);min-height:1.3em;margin:.5rem 0}.empty{text-align:center;padding:2rem;border:3px dashed var(--red);font:1.3rem Impact,sans-serif;color:#ff0}
+footer{text-align:center;padding:30px 14px;margin-top:35px;background:#07000e;border-top:5px ridge var(--pink);font:12px "Courier New",monospace;color:var(--lime)}
+dialog{width:min(700px,94vw);max-height:88vh;overflow:auto;color:#fff;background:#100020;border:5px ridge var(--cyan);box-shadow:0 0 0 100vmax #000b,0 0 35px var(--pink);padding:18px}dialog::backdrop{background:#000a}.modal-art{height:200px}.modal-art .emoji{font-size:6rem}.modal-head{display:flex;justify-content:space-between;gap:12px;align-items:start}.modal-head h2{font:2rem Impact;color:#ff0;margin:.2rem 0}.modal p{line-height:1.5}
+#popupLayer{position:fixed;inset:80px 8px 8px;z-index:100;pointer-events:none}.fake-window{position:absolute;pointer-events:auto;width:min(300px,85vw);background:#c0c0c0;color:#000;border:3px outset #eee;box-shadow:6px 6px 0 #000;font:12px "Courier New",monospace}.winbar{display:flex;justify-content:space-between;align-items:center;background:linear-gradient(90deg,#000080,#0080ff);color:white;font-weight:bold;padding:5px;cursor:move;touch-action:none}.winbar button{padding:0 6px;box-shadow:none;background:#c0c0c0;color:#000;border:2px outset #fff}.winbody{padding:12px}.progress{height:16px;border:2px inset #fff;background:#ddd;margin:8px 0}.progress span{display:block;height:100%;background:#00a000;width:7%}
+#overlay{position:fixed;inset:0;z-index:90;display:none;place-items:center;background:#000d;color:#ff0;text-align:center;font:clamp(2rem,8vw,6rem) Impact,sans-serif;text-shadow:5px 5px red,-5px -5px blue;pointer-events:none}#overlay.active{display:grid;animation:flash .25s 3}
+.toaststack{position:fixed;z-index:150;right:12px;top:90px;display:grid;gap:8px;pointer-events:none}.toast{background:#060015;border:2px solid var(--lime);color:#ff0;padding:10px;box-shadow:4px 4px #f0f;font:bold 12px "Courier New",monospace;animation:reveal .2s ease}
+.hitmarker{position:fixed;z-index:80;width:24px;height:24px;pointer-events:none;transform:translate(-50%,-50%);animation:hit .5s ease-out forwards}.hitmarker::before,.hitmarker::after{content:"";position:absolute;background:#fff;box-shadow:1px 1px #f00}.hitmarker::before{width:2px;height:9px;left:11px;top:0;box-shadow:0 15px #fff}.hitmarker::after{height:2px;width:9px;top:11px;left:0;box-shadow:15px 0 #fff}
+@keyframes hit{to{opacity:0;transform:translate(-50%,-50%) scale(1.8)}}
+.float-caption{position:fixed;z-index:85;pointer-events:none;color:#ff0;font:bold 24px Impact,sans-serif;text-shadow:3px 3px #f00;animation:captionup 1.1s forwards}@keyframes captionup{to{opacity:0;transform:translateY(-90px) rotate(12deg)}}
+.columns2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.columns3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.big-number{font:2.2rem Impact;color:var(--lime)}.terminal{height:140px;overflow:auto;background:#000;color:#00ff62;padding:8px;font:11px "Courier New",monospace;border:2px inset #777}.clicker-target{display:grid;place-items:center;width:130px;height:130px;border-radius:50%;margin:10px auto;background:radial-gradient(circle,#ff0,#ff5b00,#ff00e6);font-size:4rem;box-shadow:0 0 20px #f0f;animation:spin 8s linear infinite}.clicker-target:active{transform:scale(.9)}
+#chatLog{height:150px;overflow:auto;background:#000;padding:8px;font:12px "Courier New",monospace;color:#00ff62}.settingrow{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:7px 0;border-bottom:1px dashed #704078}.settingrow label{flex:1}.settingrow input[type=checkbox]{width:20px;height:20px;accent-color:#f0f}
+body.calm::before{animation:none;background:linear-gradient(135deg,#10162b,#21122f)}body.calm .floating,body.calm .hero h1,body.calm .meme-card .emoji{animation:none}body.calm .meme-card:hover{transform:none}
+body.no-cancer::before,body.no-cancer .hero h1,body.no-cancer .floating{animation:none!important}body.no-cancer::before{background:linear-gradient(135deg,#11152a,#21122f)}
+body.godmode{filter:hue-rotate(180deg)}body.shake{animation:shake .18s 5}body.grayscale{filter:grayscale(1)}
+@media(max-width:1100px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.layout{grid-template-columns:minmax(0,1fr) 260px}.stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:800px){.layout{grid-template-columns:1fr}.soundboard{position:relative;top:auto}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.searchrow{grid-template-columns:1fr 1fr}.soundgrid{grid-template-columns:repeat(3,minmax(0,1fr))}main{padding:10px}}
+@media(max-width:480px){.grid{grid-template-columns:1fr 1fr;gap:8px}.meme-art{height:100px}.meme-card{padding:7px}.desc{font-size:.78rem}.card-actions button{font-size:.6rem}.searchrow{grid-template-columns:1fr}.columns2,.columns3{grid-template-columns:1fr}.hero h1{font-size:2.8rem}.soundgrid{grid-template-columns:1fr 1fr}nav a{font-size:11px}.stats{grid-template-columns:1fr 1fr}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="marquee" id="marquee"><div class="marquee-track"><span>BREAKING NEWS: SHREK HAS ENTERED THE SERVER /// MUM GET THE CAMERA /// ILLUMINATI OWNS YOUR WIFI /// EPIC GAMER MOMENT /// PRESS F TO PAY RESPECTS /// ALL YOUR BASE ARE BELONG TO US /// </span><span>BREAKING NEWS: SHREK HAS ENTERED THE SERVER /// MUM GET THE CAMERA /// ILLUMINATI OWNS YOUR WIFI /// EPIC GAMER MOMENT /// PRESS F TO PAY RESPECTS /// ALL YOUR BASE ARE BELONG TO US /// </span></div></div>
+  <nav aria-label="Main navigation">
+    <a href="#home">HOME</a><a href="#stash">THE STASH</a><a href="#soundboard">SOUNDBOARD</a><a href="#random">RANDOM MEME</a><a href="#clicker">DANK CLICKER</a><a href="#achievements">ACHIEVEMENTS</a><a href="#settings">SETTINGS</a><a href="#about">ABOUT THIS DISASTER</a>
+    <button class="small secondary" id="pauseMarquee" aria-pressed="false">PAUSE BANNER</button>
+  </nav>
+</header>
+<main>
+<section id="home" class="hero">
+  <span class="floating f1">▲</span><span class="floating f2">🕶️</span><span class="floating f3">💿</span>
+  <div class="stamp">DANK CERTIFIED</div>
+  <h1 id="logo" title="Double-click for a random meme">WELCOME TO THE<br>DANK DIMENSION</h1>
+  <p class="subtitle">100% PURE INTERNET DISTILLATE // 0% PRODUCTIVITY // EST. 2012</p>
+  <p>MUM GET THE CAMERA. YOUR GRAPHICS CARD HAS LEFT THE CHAT.</p>
+  <div class="actions">
+    <button id="enterStash">ENTER THE STASH</button><button id="noscope" class="danger">GET NOSCOPED</button><button id="freeMinecraft">FREE MINECRAFT</button><button id="randomHero" class="secondary">RANDOM MEME</button><button id="airhornHero">SUMMON THE AIRHORN</button>
+  </div>
+  <div class="panel" style="max-width:750px;margin:18px auto;text-align:left">
+    <label for="heroSearch"><b>SEARCH THE FORBIDDEN ARCHIVE</b></label>
+    <div style="display:flex;gap:8px;margin-top:6px"><input id="heroSearch" placeholder="try: doge, ancient, sus..." style="width:100%"><button id="heroSearchGo">SEARCH</button></div>
+  </div>
+  <div class="stats">
+    <div class="stat">SERVER STATUS<strong>QUESTIONABLE</strong></div><div class="stat">BRAIN CELL CAPACITY<strong>1%</strong></div><div class="stat">DANKNESS LEVEL<strong>OVER 9000</strong></div><div class="stat" id="visitorStat" title="Fictional local counter">ACTIVE BOTS<strong>DEFINITELY HUMAN</strong></div>
+  </div>
+  <p><b>WEBSITE HEALTH METER:</b> <span id="healthText">CRITICAL BUT VIBRATING</span></p><div class="health"><span id="healthBar"></span></div>
+  <p id="tooPowerful" style="color:#ff0;font:1.3rem Impact;animation:flash 1.5s infinite">⚠ THIS SITE IS TOO POWERFUL ⚠</p>
+</section>
+
+<div class="layout">
+<div>
+<section id="stash" class="panel">
+  <div class="section-head"><div><h2 class="section-title">THE STASH // MEME ARCHAEOLOGY</h2><p>Dig through the forbidden archive. Every card is a tiny historical crime.</p></div><div class="stamp">144p MASTERPIECES</div></div>
+  <div class="searchrow">
+    <input id="search" aria-label="Search memes" placeholder="Search name, era, description...">
+    <select id="eraFilter" aria-label="Filter by era"><option value="">ALL ERAS</option><option>1990–2005</option><option>2006–2010</option><option>2011–2015</option><option>2016–2019</option><option>2020–2026</option></select>
+    <select id="categoryFilter" aria-label="Filter by category"><option value="">ALL CATEGORIES</option></select>
+    <select id="rarityFilter" aria-label="Filter by rarity"><option value="">ALL RARITIES</option><option>Common</option><option>Uncommon</option><option>Rare</option><option>Legendary</option><option>Mythical</option><option>Forbidden</option></select>
+  </div>
+  <div class="actions" style="justify-content:flex-start;margin:.5rem 0">
+    <select id="sortBy" aria-label="Sort archive"><option value="default">SORT: ARCHIVE ORDER</option><option value="az">NAME: A–Z</option><option value="oldest">OLDEST ERA</option><option value="newest">NEWEST ERA</option><option value="rarity">RAREST FIRST</option></select>
+    <button id="shuffle" class="secondary">SHUFFLE</button><button id="legendary" class="secondary">RANDOM LEGENDARY</button><button id="favoritesOnly" class="secondary" aria-pressed="false">FAVORITES ONLY: OFF</button><button id="clearFilters" class="danger">CLEAR FILTERS</button>
+  </div>
+  <div class="notice" id="resultCount" aria-live="polite">Loading forbidden records...</div>
+  <div id="memeGrid" class="grid"></div>
+  <div id="emptyState" class="empty hidden">NO MEMES FOUND. THE COUNCIL HAS REJECTED YOUR QUERY.<br><button id="emptyRandom" style="margin-top:12px">SUMMON A RANDOM MEME</button></div>
+</section>
+
+<section id="random" class="panel">
+  <h2>RANDOM MEME GENERATOR // ROLL THE DANKNESS</h2>
+  <div class="columns2">
+    <div id="randomResult" class="meme-art modal-art"><span class="emoji">🎲</span><span class="caption">PRESS THE BUTTON, COWARD</span></div>
+    <div><div class="big-number" id="randomTitle">THE ARCHIVE AWAITS</div><p id="randomCaption">WHEN THE WIFI DROPS BUT THE AIRHORN IS STILL CONNECTED</p><p id="randomRarity" class="tag">RARITY: UNKNOWN</p><p id="collectionCount">DISCOVERED: 0 / 0 (0%)</p><div class="actions" style="justify-content:flex-start"><button id="generateRandom">ROLL THE DANKNESS</button><button id="copyRandom" class="secondary">COPY RESULT</button></div><textarea id="shareText" rows="2" aria-label="Shareable meme text" readonly style="width:100%"></textarea></div>
+  </div>
+</section>
+
+<section id="clicker" class="panel">
+  <h2>DANK CLICKER // ECONOMY IS A SOCIAL CONSTRUCT</h2>
+  <div class="columns2">
+    <div style="text-align:center"><button id="clickTarget" class="clicker-target" aria-label="Click the Dorito">▲</button><p>CLICK THE DORITO. FUND THE MEME INDUSTRIAL COMPLEX.</p><div>MEME POINTS: <span class="big-number" id="points">0</span></div><div>POINTS PER CLICK: <b id="ppc">1</b> · PASSIVE / SEC: <b id="pps">0</b></div></div>
+    <div><h3 style="color:#ff0">UPGRADE SHOP</h3><div id="upgradeShop"></div><p><button id="prestige" class="danger">PRESTIGE / RESET FOR GLORY</button></p><p><button id="resetClicker" class="secondary">RESET SAVE</button></p><div class="notice" id="clickerNotice"></div></div>
+  </div>
+</section>
+
+<section id="achievements" class="panel">
+  <h2>ACHIEVEMENTS // PARTICIPATION TROPHIES</h2><p>Progress is saved in this browser when local storage is available.</p><div id="achievementList" class="columns2"></div>
+</section>
+
+<section id="chat" class="panel">
+  <h2>GLOBAL CHAT (FAKE, LOCAL, DEFINITELY NOT A SERVER)</h2><div id="chatLog" aria-live="polite"></div><form id="chatForm" style="display:flex;gap:8px;margin-top:8px"><input id="chatInput" maxlength="120" placeholder="Say something questionable..." style="flex:1"><button>POST LOCALLY</button></form><div class="notice">Nothing here leaves this page. The bots are fictional and poorly paid.</div>
+</section>
+
+<section id="settings" class="panel">
+  <h2>SETTINGS // REGAIN A FRACTION OF CONTROL</h2>
+  <div class="columns2">
+    <div>
+      <div class="settingrow"><label for="volume">MASTER VOLUME</label><input id="volume" class="volume" type="range" min="0" max="1" step=".01" value=".35" style="max-width:160px"></div>
+      <div class="settingrow"><label for="mute">MUTE ALL SOUND</label><input id="mute" type="checkbox"></div>
+      <div class="settingrow"><label for="hitmarkersToggle">GLOBAL HITMARKERS</label><input id="hitmarkersToggle" type="checkbox" checked></div>
+      <div class="settingrow"><label for="shakeToggle">SCREEN SHAKE</label><input id="shakeToggle" type="checkbox" checked></div>
+      <div class="settingrow"><label for="flashToggle">FLASHING OVERLAYS</label><input id="flashToggle" type="checkbox" checked></div>
+      <div class="settingrow"><label for="motionToggle">REDUCED MOTION</label><input id="motionToggle" type="checkbox"></div>
+      <div class="settingrow"><label for="backgroundToggle">BACKGROUND EFFECTS</label><input id="backgroundToggle" type="checkbox" checked></div>
+      <div class="settingrow"><label for="soundboardToggle">SHOW SOUNDBOARD</label><input id="soundboardToggle" type="checkbox" checked></div>
+    </div>
+    <div>
+      <div class="settingrow"><label for="cursorMode">CURSOR MODE</label><select id="cursorMode"><option value="crosshair">MLG CROSSHAIR</option><option value="default">DEFAULT BROWSER</option><option value="pointer">POINTER EVERYTHING</option></select></div>
+      <p><button id="tooMuch">TOO MUCH INTERNET</button> <button id="touchGrass" class="secondary">TOUCH GRASS MODE</button></p>
+      <p><button id="resetPrefs" class="danger">RESET PREFERENCES</button></p>
+      <p><button id="resetAchievements" class="danger">RESET ACHIEVEMENTS</button></p>
+      <p><button id="cancelReality" class="secondary">CANCEL REALITY / CLOSE POPUPS</button></p>
+      <div class="notice" id="settingsNotice">SETTINGS SAVE LOCALLY WHEN POSSIBLE.</div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="panel">
+  <h2>ABOUT THIS DISASTER</h2>
+  <p><b>MISSION:</b> preserve the glorious web era when every page had a visitor counter, every video had bass boosted audio, and the background was an active threat.</p>
+  <p><b>FAKE HISTORY:</b> The Dank Dimension was allegedly assembled from abandoned forum signatures, a haunted MP3 player, and a folder named FINAL_FINAL2_REAL.</p>
+  <p><b>SUPPORTED ERAS:</b> 1990–2005 ancient web, 2006–2010 classic YouTube and rage comics, 2011–2015 MLG montage, 2016–2019 surreal/deep-fried, 2020–2026 brainrot archive.</p>
+  <p><b>FICTIONAL CONTRIBUTORS:</b> xX_DoritoDestroyer_Xx · DialUpWizard · Shrekonomics · NoScopeGrandpa · DefinitelyNotABot.</p>
+  <p><b>ASSETS:</b> Meme art in this demo uses emoji and CSS placeholders. Sound effects are generated locally with Web Audio. Replace URLs in <code>CONFIG</code> to use your own images or audio. External assets require internet and may fail; this page does not bundle third-party recordings.</p>
+  <p><b>PARODY NOTICE:</b> Referenced memes and names belong to their respective creators/rightsholders. This is a non-commercial parody archive, not an official collection.</p>
+</section>
+</div>
+
+<aside id="soundboard" class="panel soundboard">
+  <h2>SOUNDBOARD // EAR DAMAGE</h2><p style="font-size:.8rem">Generated effects are original approximations. Airhorn may be loud; master volume starts low.</p>
+  <div class="meter" aria-label="Fake sound meter"><span id="soundMeter"></span></div><div class="notice" id="soundStatus" aria-live="polite">AUDIO ENGINE STANDBY</div>
+  <div class="soundgrid" id="soundGrid"></div>
+  <div class="settingrow"><label for="boardVolume">MASTER VOLUME</label><input id="boardVolume" class="volume" type="range" min="0" max="1" step=".01" value=".35"></div>
+  <p><button id="boardMute" class="secondary">MUTE</button> <button id="stopAudio" class="danger">STOP ALL AUDIO</button></p>
+  <p>ACTIVE SOUNDS: <b id="activeSounds">0</b> · SESSION SFX: <b id="soundCount">0</b></p>
+  <button id="maximum" style="width:100%">DEPLOY MAXIMUM TOMFOOLERY</button>
+  <div class="notice">Polyphony: overlapping generated sounds supported. No sound starts until you click.</div>
+</aside>
+</div>
+</main>
+<footer>
+  <div style="font:2rem Impact;color:#ff0;animation:pulse 2s infinite">YOU HAVE REACHED PEAK BRAINROT</div>
+  <p>🚧 UNDER CONSTRUCTION SINCE THE DIAL-UP ERA 🚧</p><p>VISITORS WHO HAVE LOST BRAIN CELLS: <b id="visitorCounter">999,999,999</b> · SERVER LOAD: 420% · UPTIME: QUESTIONABLE</p>
+  <p>BEST VIEWED WHILE EATING DORITOS AT 3:00 AM</p><p>POWERED BY PURE CAFFEINE, QUESTIONABLE DECISIONS, AND ONE SHARED BRAIN CELL</p>
+  <p>© 2012–2026 THE DANK DIMENSION. ALL YOUR BASE ARE BELONG TO US. (PARODY)</p>
+  <p id="footerQuote">“THE COUNCIL HAS DECIDED.”</p>
+  <button id="destroyVibe" class="danger">DESTROY THE VIBE</button> <button id="backTop" class="secondary">BACK TO TOP</button>
+</footer>
+<div id="popupLayer" aria-label="Simulated fake computer windows"></div>
+<div id="overlay" role="status" aria-live="assertive"></div>
+<div class="toaststack" id="toaststack" aria-live="polite"></div>
+<dialog id="memeDialog" aria-labelledby="modalTitle"><div class="modal-head"><h2 id="modalTitle">MEME</h2><button id="closeModalTop" class="danger" aria-label="Close meme details">X</button></div><div id="modalArt" class="meme-art modal-art"><span class="emoji">🗿</span></div><div class="meta" id="modalMeta"></div><p id="modalDesc"></p><p id="modalNotes"></p><blockquote id="modalQuote" style="color:#ff0;border-left:4px solid #f0f;padding-left:12px"></blockquote><div class="actions" style="justify-content:flex-start"><button id="modalSound">PLAY ASSOCIATED SOUND</button><button id="modalFavorite" class="secondary">FAVORITE</button><button id="closeModal" class="danger">I UNDERSTAND THE BRAINROT</button></div></dialog>
+<script>
+"use strict";
+/* CUSTOMIZATION: replace image/sound URLs here. Empty sound URLs use original Web Audio approximations. */
+const CONFIG = {
+  imageOverrides: {}, // e.g. "Doge": "images/doge.jpg" (optional; remote URLs also work)
+  soundUrls: {},      // e.g. "MLG Airhorn": "sounds/airhorn.mp3"; use your own licensed .mp3/.wav/.ogg
+  masterVolume: 0.35, maxActiveSounds: 18, popupCount: 5, effectDuration: 2000
+};
+const memes = [
+["Dancing Baby","1990–2005","Animation","The tiny 3D dancer who made the web collectively ask why.","🍼",1996],
+["Hampster Dance","1990–2005","Web classic","A tiny hamster loop with a suspiciously powerful chorus.","🐹",1998],
+["All Your Base Are Belong to Us","1990–2005","Gaming","A famously awkward game-translation phrase became internet shorthand.","🎮",2000],
+["Peanut Butter Jelly Time","1990–2005","Animation","A dancing banana and a song that refuses to leave the brain.","🍌",2002],
+["Badger Badger Badger","1990–2005","Animation","Badgers, mushrooms, and repetition doing the heavy lifting.","🍄",2003],
+["Numa Numa","1990–2005","Reaction","An enthusiastic webcam lip-sync that became early viral-video lore.","🎤",2004],
+["YTMND Era","1990–2005","Web classic","Looping images, audio, and a community-powered early web format.","💾",2004],
+["Lemon Demon Internet Culture","1990–2005","Music parody","A nod to the oddball animated-song culture of the early web.","🍋",2004],
+["Homestar Runner","1990–2005","Animation","A Flash-era comedy universe with its own strange vocabulary.","🏃",2000],
+["End of the World","1990–2005","Animation","A chaotic animated apocalypse with quotable nonsense.","🌎",2003],
+["Early Viral Animal Videos","1990–2005","Animals","Before feeds, animal clips spread through links and forwarded emails.","🐈",2005],
+["Trollface","2006–2010","Rage comic","The face of deliberately annoying internet mischief.","😈",2008],
+["Rage Comics","2006–2010","Rage comic","A DIY comic language for everyday frustration and triumph.","😤",2008],
+["Me Gusta","2006–2010","Rage comic","A blankly delighted face for very specific situations.","🙂",2010],
+["Forever Alone","2006–2010","Rage comic","A stick-figure emblem of awkward loneliness.","🥲",2010],
+["Y U NO Guy","2006–2010","Rage comic","A shouty face demanding an explanation in broken grammar.","❓",2010],
+["Rickroll","2006–2010","Prank","A bait-and-switch link that sends you to a familiar music video.","🎵",2007],
+["Nyan Cat","2006–2010","Animation","A pixel cat flies through space leaving a rainbow trail.","🌈",2011],
+["Keyboard Cat","2006–2010","Animals","A keyboard-playing cat became a classic video punchline.","🐱",2007],
+["Dramatic Chipmunk","2006–2010","Reaction","A sudden turn and a stare that says everything.","🐿️",2007],
+["Double Rainbow","2006–2010","Reaction","An awestruck reaction to a double rainbow became a catchphrase.","🌈",2010],
+["Chocolate Rain","2006–2010","Music parody","A viral performance remembered for its distinctive delivery.","🎙️",2007],
+["Charlie Bit My Finger","2006–2010","Viral video","A family clip became one of the early viral-video touchstones.","👶",2007],
+["Leeroy Jenkins","2006–2010","Gaming","A raid plan meets one extremely committed charge.","⚔️",2005],
+["Overly Attached Girlfriend","2006–2010","Image macro","A wide-eyed image macro for exaggerated clinginess.","👀",2012],
+["Boxxy","2006–2010","Web personality","An expressive early-web personality remembered from video culture.","📹",2008],
+["Technoviking","2006–2010","Dance","A stern, unforgettable figure in a techno street video.","🕺",2000],
+["Advice Animals","2006–2010","Image macro","A template format for fast jokes and familiar archetypes.","🐶",2009],
+["Ceiling Cat","2006–2010","Animals","A cat peeking through a ceiling became a classic image macro.","🐈",2006],
+["Longcat","2006–2010","Animals","A very long cat whose proportions became the entire joke.","🐈‍⬛",2006],
+["Sanic","2011–2015","Gaming","A deliberately rough Sonic-inspired drawing with maximum cursed energy.","💨",2012],
+["Doge","2011–2015","Animals","A Shiba Inu paired with broken-English captions and colorful words.","🐕",2013],
+["Shrek Is Love, Shrek Is Life","2011–2015","Surreal","A deliberately surreal Shrek fandom reference from the darker meme vault.","🟢",2013],
+["John Cena","2011–2015","Audio gag","A sudden wrestling-theme gag announces a surprise arrival.","🥊",2014],
+["360 No Scope","2011–2015","Gaming","A trick-shot boast elevated into a whole montage-parody language.","🎯",2012],
+["MLG Doritos","2011–2015","MLG","A triangle chip becomes an unofficial badge of montage excess.","🔺",2013],
+["Mountain Dew Energy","2011–2015","MLG","A parody nod to the neon-green fuel of gamer montage jokes.","🥤",2012],
+["Airhorn Montage Edits","2011–2015","MLG","A loud horn punctuates every moment, including moments that do not exist.","📢",2013],
+["Illuminati Confirmed","2011–2015","Conspiracy parody","Triangles and green screens turn coincidence into a fake revelation.","👁️",2012],
+["Smoke Weed Everyday","2011–2015","Audio gag","A recognizable montage-era audio reference; use your own recording if desired.","🌿",2012],
+["Mom Get the Camera","2011–2015","Catchphrase","A catchphrase for moments allegedly too epic to witness alone.","📸",2013],
+["Oh Baby, A Triple!","2011–2015","Gaming","A celebratory callout associated with multi-kill montage edits.","💥",2012],
+["Damn Son, Where'd You Find This?","2011–2015","Audio gag","A producer-tag style phrase used to hype a beat or clip.","🎛️",2012],
+["Get Rekt","2011–2015","Gaming","A short victory taunt for an opponent's unfortunate day.","💀",2013],
+["FaZe Montage Parodies","2011–2015","MLG","Quick cuts, trick shots, loud edits, and suspiciously many lens flares.","🎮",2014],
+["Sunglasses Drop","2011–2015","MLG","Pixel shades descend as if the joke has achieved critical mass.","🕶️",2012],
+["Blunt Rotation Meme","2011–2015","Image macro","A surreal group-reaction format built around passing something along.","🔄",2014],
+["Dat Boi","2011–2015","Surreal","An absurd frog-on-a-unicycle image with a simple greeting.","🐸",2015],
+["Pepe the Frog","2011–2015","Reaction","A comic character became a widely reused reaction image.","🐸",2008],
+["We Are Number One","2011–2015","Music parody","A musical villain performance spawned remixes and edits.","1️⃣",2014],
+["Harambe","2011–2015","Reaction","A gorilla became the focus of a huge wave of internet remembrance memes.","🦍",2016],
+["Ugandan Knuckles","2016–2019","Surreal","A small red character asks the same question repeatedly.","🔴",2018],
+["Big Chungus","2016–2019","Surreal","An exaggerated cartoon rabbit image turned into an absurd meme.","🐰",2018],
+["Mocking SpongeBob","2016–2019","Image macro","Alternating capitalization imitates a mocking voice.","🧽",2017],
+["Loss","2016–2019","Comic","A minimalist comic layout became a puzzle-like reference.","📉",2008],
+["Area 51 Raid","2016–2019","Event meme","A joke event proposed rushing a secretive military facility.","👽",2019],
+["Shaggy Has Unlimited Power","2016–2019","Image macro","A cartoon character is framed as an unstoppable action hero.","⚡",2019],
+["E","2016–2019","Surreal","A distorted face and one letter become an intentionally context-free joke.","🅴",2018],
+["Surreal Memes","2016–2019","Surreal","Dream logic, strange edits, and punchlines that refuse to explain themselves.","🌀",2017],
+["Deep-Fried Memes","2016–2019","Image macro","Oversaturated colors, compression artifacts, and aggressively sharpened pixels.","🍟",2016],
+["Crab Rave","2016–2019","Dance","A crowd of animated crabs became shorthand for celebration.","🦀",2018],
+["Moth Memes","2016–2019","Animals","A moth's alleged love of lamps becomes a recurring joke.","🦋",2018],
+["Stonks","2016–2019","Image macro","A misspelled stock-market joke for questionable financial decisions.","📈",2017],
+["Wide Putin","2016–2019","Surreal","A stretched image transforms a serious walk into a surreal visual gag.","🚶",2018],
+["Bongo Cat","2016–2019","Animals","A simple cat animation plays instruments and reacts to input.","🐱",2018],
+["El Risitas Reaction","2016–2019","Reaction","A laughing interview clip became a reaction format across communities.","😂",2015],
+["Among Us / Sus","2020–2026","Gaming","Suspicion, emergency meetings, and a single word: sus.","🚀",2020],
+["Amogus","2020–2026","Surreal","A deliberately simplified, often distorted crewmate shape.","ඞ",2021],
+["When the Impostor Is Sus","2020–2026","Gaming","A phrase that compresses an entire era of social-deduction jokes.","ඞ",2020],
+["Bing Chilling","2020–2026","Audio gag","A viral clip reference frequently remixed into internet jokes.","🍦",2021],
+["Quandale Dingle","2020–2026","Character meme","A name-led meme character associated with distorted edits and sound effects.","👤",2022],
+["Grimace Shake","2020–2026","Food meme","A purple shake becomes the setup for intentionally dramatic skits.","🥤",2023],
+["Skibidi Toilet","2020–2026","Video series","A surreal, rapidly escalating internet animation phenomenon.","🚽",2023],
+["Rizz","2020–2026","Slang","A shorthand for charm, often used with exaggerated confidence.","😎",2022],
+["Ohio Memes","2020–2026","Surreal","A place name becomes a label for bizarre or impossible situations.","🌽",2022],
+["Sigma Edits","2020–2026","Video edit","Slow-motion confidence edits parody hyper-serious self-improvement aesthetics.","🗿",2022],
+["Gigachad","2020–2026","Image macro","A hyper-stylized image used for exaggerated confidence and stoicism.","🗿",2017],
+["NPC Streaming","2020–2026","Streaming","Repeated catchphrases and gestures become a recognizable livestream format.","🎁",2023],
+["Fanum Tax","2020–2026","Slang","A joke about taking a portion of someone else's food.","🍕",2022],
+["Mewing","2020–2026","Slang","A facial-posture trend turned into exaggerated reaction imagery.","🤫",2023],
+["Streamer Reaction Culture","2020–2026","Streaming","Big reactions, clipped moments, and chat-driven jokes define the format.","📺",2020],
+["Low-Quality CapCut Edits","2020–2026","Video edit","Aggressive zooms, shakes, captions, and bass drops in one tiny file.","📱",2021],
+["AI Surreal Memes","2020–2026","Surreal","Generated images combine familiar objects in impossible, dreamlike ways.","🤖",2023],
+["Italian Brainrot","2020–2026","Brainrot","A broad label for absurd AI-assisted characters and synthetic-sounding names.","🍝",2025],
+["Tung Tung Tung Sahur","2020–2026","Brainrot","A recurring character in the broader Italian-brainrot-style meme wave.","🥁",2025],
+["Tralalero Tralala","2020–2026","Brainrot","A surreal character name associated with the Italian brainrot trend.","🦈",2025],
+["Bombardiro Crocodilo","2020–2026","Brainrot","A hybrid creature name from the Italian brainrot meme family.","🐊",2025],
+["2020s Brainrot Aesthetic","2020–2026","Brainrot","Fast edits, nonsense names, remix loops, and context-free punchlines.","🧠",2024]
+].map((m,i)=>({id:i+1,title:m[0],era:m[1],category:m[2],description:m[3],emoji:m[4],year:m[5],rarity:rollRarity(i),notes:`Archive note: this entry is presented as a recognizable internet-culture reference. The date is an approximate reference point, not a claim about a single definitive origin.`}));
+function rollRarity(i){const n=(i*17+11)%100;return n<42?"Common":n<68?"Uncommon":n<85?"Rare":n<95?"Legendary":n<99?"Mythical":"Forbidden"}
+const captions=["WHEN THE WIFI DROPS BUT THE AIRHORN IS STILL CONNECTED","THE ILLUMINATI UPDATED MY GRAPHICS DRIVERS","BRO REALLY SAID SKILL ISSUE","POV: YOUR LAST BRAIN CELL CLOCKS IN","WHEN THE COUNCIL HAS A PATCH NOTE","TASK FAILED SUCCESSFULLY","MUM GET THE CAMERA","NO THOUGHTS. ONLY BASS BOOSTED AUDIO.","THE SERVER HAS BECOME SENTIENT","WHEN YOUR FPS IS HIGHER THAN YOUR GRADES"];
+const quotes=["THE COUNCIL HAS DECIDED.","360 NO SCOPE OR REFUND.","YOUR GRAPHICS CARD HAS LEFT THE CHAT.","CERTIFIED BY THREE DORITO TRIANGLES.","THIS WEBSITE WAS MADE IN A BASEMENT.","SUS LEVEL: CRITICAL.","THEY ASKED FOR A MEME. I GAVE THEM A LIFESTYLE.","ALL YOUR BASE ARE BELONG TO US."];
+const soundNames=["MLG Airhorn","Oh Baby, A Triple!","Mom Get the Camera","Sad Violin","Hitmarker","Smoke Weed Everyday","Damn Son, Where'd You Find This?","X-Files Theme","Darude – Sandstorm","Vine Boom","Bruh","Windows XP Error","Metal Pipe Falling","Minecraft Villager HUH","Roblox OOF","Vine Thud","Get Rekt","Sniper Shot","Crowd Cheering","Explosion","Applause","Record Scratch","Dramatic Sting","Bonk","Mario-style Coin","Shrek-style Parody Sting"];
+const soundEmoji=["📢","💥","📸","🎻","🎯","🌿","🎛️","👽","🌪️","🔊","🗿","🪟","🔩","🧑‍🌾","🟥","💢","💀","🎯","👏","💣","👏","💿","⚡","🔨","🪙","🟢"];
+const achievementsData=[
+["First Blood","Click or view any meme",()=>state.memeClicks>=1],
+["Audio Menace","Play 10 sound effects",()=>state.soundCount>=10],
+["Airhorn Addict","Play the airhorn 25 times",()=>state.airhorns>=25],
+["Meme Archaeologist","View 10 distinct memes",()=>state.viewed.length>=10],
+["Noscope Legend","Trigger GET NOSCOPED five times",()=>state.noscopes>=5],
+["Virus Survivor","Close all five fake pop-ups",()=>state.virusSurvivor],
+["Secret Keeper","Enter the Konami Code",()=>state.konami],
+["Brainrot Overload","Unlock 10 achievements",()=>state.achievements.length>=10],
+["Shrek Enthusiast","Activate the Shrek easter egg",()=>state.shrek],
+["Touch Grass","Spend a little time in this tab",()=>Date.now()-state.started>90000]
+];
+const defaults={volume:CONFIG.masterVolume,mute:false,hitmarkers:true,shake:true,flash:true,reducedMotion:matchMedia("(prefers-reduced-motion: reduce)").matches,background:true,soundboard:true,cursor:"crosshair",favorites:[],viewed:[],discovered:[],achievements:[],memeClicks:0,soundCount:0,airhorns:0,noscopes:0,virusSurvivor:false,konami:false,shrek:false,points:0,ppc:1,pps:0,upgrades:{},prestige:0};
+let state={...defaults,started:Date.now()};
+function safeLoad(){try{const saved=JSON.parse(localStorage.getItem("dankDimensionSave")||"{}");state={...state,...saved,started:Date.now(),upgrades:{...(saved.upgrades||{})}}}catch(e){state={...defaults,started:Date.now()}}}
+function save(){try{const copy={...state};delete copy.started;localStorage.setItem("dankDimensionSave",JSON.stringify(copy))}catch(e){/* Session still works if storage is blocked. */}}
+safeLoad();
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+let audioCtx=null, activeAudio= new Set(), sessionSounds=0, currentMeme=null, favoritesOnly=false, shuffleOrder=null, popCount=0, keyBuffer=[], captionTimer=null;
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function toast(msg){const el=document.createElement("div");el.className="toast";el.textContent=msg;$("#toaststack").append(el);setTimeout(()=>el.remove(),3000)}
+function unlock(name){if(state.achievements.includes(name))return;state.achievements.push(name);save();renderAchievements();toast("ACHIEVEMENT UNLOCKED: "+name)}
+function checkAchievements(){for(const [name,,test] of achievementsData){if(test())unlock(name)}}
+function markViewed(m){state.memeClicks++;if(!state.viewed.includes(m.id))state.viewed.push(m.id);if(!state.discovered.includes(m.id))state.discovered.push(m.id);save();checkAchievements();updateCollection()}
+function artHTML(m,extra=""){const override=CONFIG.imageOverrides[m.title];if(override)return `<div class="meme-art ${extra}"><img loading="lazy" alt="${esc(m.title)}" src="${esc(override)}" style="width:100%;height:100%;object-fit:contain" onerror="this.remove();this.parentElement.insertAdjacentHTML('beforeend','<span class=emoji>${m.emoji}</span>')"><span class="caption">${esc(m.title.toUpperCase())}</span></div>`;return `<div class="meme-art ${extra}" role="img" aria-label="${esc(m.title)} illustration"><span class="emoji">${m.emoji}</span><span class="caption">${esc(m.title.toUpperCase())}</span></div>`}
+function visibleMemes(){let arr=memes.filter(m=>{const q=$("#search").value.trim().toLowerCase();return (!q||[m.title,m.era,m.category,m.description,m.year].join(" ").toLowerCase().includes(q))&&(!$("#eraFilter").value||m.era===$("#eraFilter").value)&&(!$("#categoryFilter").value||m.category===$("#categoryFilter").value)&&(!$("#rarityFilter").value||m.rarity===$("#rarityFilter").value)&&(!favoritesOnly||state.favorites.includes(m.id))});if(shuffleOrder)arr.sort((a,b)=>shuffleOrder.indexOf(a.id)-shuffleOrder.indexOf(b.id));else{const s=$("#sortBy").value;if(s==="az")arr.sort((a,b)=>a.title.localeCompare(b.title));if(s==="oldest")arr.sort((a,b)=>a.year-b.year);if(s==="newest")arr.sort((a,b)=>b.year-a.year);if(s==="rarity"){const r=["Forbidden","Mythical","Legendary","Rare","Uncommon","Common"];arr.sort((a,b)=>r.indexOf(a.rarity)-r.indexOf(b.rarity))}}return arr}
+function renderGrid(){const arr=visibleMemes();$("#memeGrid").innerHTML=arr.map((m,i)=>`<article class="meme-card" tabindex="0" data-id="${m.id}" style="animation-delay:${Math.min(i,12)*20}ms">${artHTML(m)}<h3>${esc(m.title)}</h3><div class="meta"><span class="tag">${esc(m.era)}</span><span class="tag">${esc(m.category)}</span><span class="rarity">${esc(m.rarity)}</span></div><p class="desc">${esc(m.description)}</p><div class="card-actions"><button data-action="view" data-id="${m.id}">VIEW MEME</button><button data-action="sound" data-id="${m.id}" class="secondary">PLAY SOUND</button><button data-action="favorite" data-id="${m.id}" class="secondary">${state.favorites.includes(m.id)?"★ SAVED":"☆ FAVORITE"}</button></div></article>`).join("");$("#resultCount").textContent=`${arr.length} MEMES FOUND // ${state.favorites.length} FAVORITES // ARCHIVE INTEGRITY: QUESTIONABLE`;$("#emptyState").classList.toggle("hidden",arr.length!==0)}
+function openMeme(id){const m=memes.find(x=>x.id===Number(id));if(!m)return;currentMeme=m;markViewed(m);$("#modalTitle").textContent=m.title;$("#modalArt").innerHTML=`<span class="emoji">${m.emoji}</span><span class="caption">${esc(m.title.toUpperCase())}</span>`;$("#modalMeta").innerHTML=`<span class="tag">${esc(m.era)}</span><span class="tag">${esc(m.category)}</span><span class="rarity">${esc(m.rarity)}</span><span class="tag">REFERENCE YEAR: ${m.year}</span>`;$("#modalDesc").textContent=m.description;$("#modalNotes").textContent=m.notes;$("#modalQuote").textContent='"'+quotes[Math.floor(Math.random()*quotes.length)]+'"';$("#modalFavorite").textContent=state.favorites.includes(m.id)?"★ REMOVE FAVORITE":"☆ FAVORITE";if(!$("#memeDialog").open)$("#memeDialog").showModal()}
+function toggleFavorite(id){id=Number(id);state.favorites=state.favorites.includes(id)?state.favorites.filter(x=>x!==id):[...state.favorites,id];save();renderGrid();if(currentMeme&&currentMeme.id===id)$("#modalFavorite").textContent=state.favorites.includes(id)?"★ REMOVE FAVORITE":"☆ FAVORITE";toast(state.favorites.includes(id)?"SAVED TO LOCAL FAVORITES":"REMOVED FROM FAVORITES")}
+function audioContext(){if(!audioCtx){const C=window.AudioContext||window.webkitAudioContext;if(C)audioCtx=new C()}if(audioCtx?.state==="suspended")audioCtx.resume();return audioCtx}
+function tone({freq=440,duration=.18,type="sine",volume=.3,endFreq=null,noise=false}={}){if(state.mute||state.volume<=0)return false;const ctx=audioContext();if(!ctx)return false;const master=ctx.createGain();master.gain.value=state.volume;master.connect(ctx.destination);const gain=ctx.createGain();gain.gain.setValueAtTime(Math.max(.001,volume),ctx.currentTime);gain.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+duration);gain.connect(master);let src;if(noise){const buffer=ctx.createBuffer(1,Math.max(1,ctx.sampleRate*duration),ctx.sampleRate),data=buffer.getChannelData(0);for(let i=0;i<data.length;i++)data[i]=Math.random()*2-1;src=ctx.createBufferSource();src.buffer=buffer;const filter=ctx.createBiquadFilter();filter.type="lowpass";filter.frequency.value=1800;src.connect(filter);filter.connect(gain)}else{src=ctx.createOscillator();src.type=type;src.frequency.setValueAtTime(freq,ctx.currentTime);if(endFreq)src.frequency.exponentialRampToValueAtTime(endFreq,ctx.currentTime+duration);src.connect(gain)}activeAudio.add(src);$("#activeSounds").textContent=activeAudio.size;src.onended=()=>{activeAudio.delete(src);try{src.disconnect();gain.disconnect();master.disconnect()}catch(e){}$("#activeSounds").textContent=activeAudio.size};src.start();src.stop(ctx.currentTime+duration);return true}
+function playSound(name){if(state.mute){toast("SOUND MUTED");return}const url=CONFIG.soundUrls[name];sessionSounds++;state.soundCount++;if(name==="MLG Airhorn")state.airhorns++;save();$("#soundCount").textContent=sessionSounds;checkAchievements();$("#soundStatus").textContent="PLAYING: "+name.toUpperCase();$("#soundMeter").style.width=(25+Math.random()*75)+"%";setTimeout(()=>$("#soundMeter").style.width="3%",350);spawnCaption(name.toUpperCase());const gridButton=$$("#soundGrid button").find(b=>b.dataset.sound===name);if(gridButton){gridButton.classList.add("playing");setTimeout(()=>gridButton.classList.remove("playing"),250)}if(url){const a=new Audio(url);a.volume=state.volume;a.preload="auto";activeAudio.add(a);$("#activeSounds").textContent=activeAudio.size;a.onended=()=>{activeAudio.delete(a);$("#activeSounds").textContent=activeAudio.size};a.onerror=()=>{activeAudio.delete(a);$("#activeSounds").textContent=activeAudio.size;$("#soundStatus").textContent=`${name}: FILE UNAVAILABLE; PLAYING GENERATED FALLBACK`;fallbackSound(name)};a.play().catch(()=>{activeAudio.delete(a);fallbackSound(name)})}else fallbackSound(name)}
+function fallbackSound(name){const low=name.toLowerCase();if(low.includes("airhorn")){tone({freq:440,endFreq:480,duration:.42,type:"sawtooth",volume:.22});setTimeout(()=>tone({freq:590,duration:.28,type:"sawtooth",volume:.18}),100)}else if(low.includes("hitmarker")||low.includes("coin"))tone({freq:low.includes("coin")?900:1400,endFreq:low.includes("coin")?1500:900,duration:.07,type:"square",volume:.14});else if(low.includes("violin")||low.includes("sad"))tone({freq:330,endFreq:165,duration:.65,type:"triangle",volume:.18});else if(low.includes("boom")||low.includes("explosion")||low.includes("pipe")||low.includes("thud")||low.includes("bonk")||low.includes("sniper"))tone({freq:150,endFreq:38,duration:.3,type:"sawtooth",volume:.2,noise:true});else if(low.includes("sandstorm")||low.includes("x-files")){tone({freq:220,duration:.16,type:"sawtooth",volume:.1});setTimeout(()=>tone({freq:330,duration:.16,type:"sawtooth",volume:.1}),130);setTimeout(()=>tone({freq:440,duration:.2,type:"sawtooth",volume:.1}),260)}else if(low.includes("error")||low.includes("bruh")){tone({freq:260,duration:.12,type:"square",volume:.14});setTimeout(()=>tone({freq:180,duration:.18,type:"square",volume:.12}),140)}else tone({freq:Math.random()*600+220,endFreq:Math.random()*180+100,duration:.16,type:"square",volume:.13})}
+function stopAllAudio(){for(const a of activeAudio){try{a.stop?.();a.pause?.();a.currentTime=0}catch(e){}}activeAudio.clear();$("#activeSounds").textContent="0";$("#soundStatus").textContent="ALL AUDIO TERMINATED";if(audioCtx)audioCtx.suspend()}
+function spawnCaption(text){const el=document.createElement("div");el.className="float-caption";el.textContent=text;el.style.left=(10+Math.random()*65)+"vw";el.style.top=(30+Math.random()*45)+"vh";document.body.append(el);setTimeout(()=>el.remove(),1150)}
+function makeHit(x,y){if(!state.hitmarkers||state.reducedMotion)return;const h=document.createElement("div");h.className="hitmarker";h.style.left=x+"px";h.style.top=y+"px";document.body.append(h);setTimeout(()=>h.remove(),520)}
+function showOverlay(text,duration=1600){if(!state.flash)return toast(text);const o=$("#overlay");o.textContent=text;o.classList.add("active");setTimeout(()=>o.classList.remove("active"),duration)}
+function noscope(){state.noscopes++;save();checkAchievements();if(state.shake&&!state.reducedMotion){document.body.classList.add("shake");setTimeout(()=>document.body.classList.remove("shake"),950)}playSound("Sniper Shot");showOverlay("360 NOSCOPE. SKILL ISSUE.",1300);toast("[MLG_420] NOSCOPED [YOUR PRODUCTIVITY]");for(let i=0;i<5;i++)setTimeout(()=>spawnCaption("✛"),i*80)}
+function makePopups(){const layer=$("#popupLayer");layer.innerHTML="";const messages=["ERROR: SYSTEM 32 DELETED","CONGRATULATIONS! YOU WON AN IPHONE 4","YOUR RAM IS NOW PROPERTY OF THE ILLUMINATI","MINECRAFT DOWNLOAD: 0.0000001% COMPLETE","WINDOWS DEFENDER HAS LEFT THE CHAT","FATAL ERROR: TOO MUCH DANKNESS","PLEASE INSERT 3 DORITOS TO CONTINUE"];popCount=0;for(let i=0;i<CONFIG.popupCount;i++){const win=document.createElement("div");win.className="fake-window";win.style.left=Math.max(0,Math.random()*(innerWidth-310))+"px";win.style.top=Math.max(0,Math.random()*(innerHeight-260))+"px";win.style.zIndex=String(101+i);win.innerHTML=`<div class="winbar"><span>☠ INTERNET EXPLORER ${i+1}.0</span><button data-closewin aria-label="Close fake window">X</button></div><div class="winbody"><b>${messages[Math.floor(Math.random()*messages.length)]}</b><p>REALITY DOWNLOAD STATUS: <span data-percent>${(Math.random()*13).toFixed(6)}%</span></p><div class="progress"><span style="width:${Math.random()*25}%"></span></div><div class="terminal">C:\\DANK> initiating nonsense...<br>C:\\DANK> locating brain cell...<br>C:\\DANK> ERROR: SKILL ISSUE</div><button data-scan class="small">SCAN FOR VIBES</button></div>`;layer.append(win);const bar=win.querySelector(".winbar");let drag=null;bar.addEventListener("pointerdown",e=>{if(e.target.closest("button"))return;drag={x:e.clientX-win.offsetLeft,y:e.clientY-win.offsetTop};bar.setPointerCapture(e.pointerId)});bar.addEventListener("pointermove",e=>{if(!drag)return;win.style.left=Math.max(0,Math.min(innerWidth-win.offsetWidth,e.clientX-drag.x))+"px";win.style.top=Math.max(0,Math.min(innerHeight-win.offsetHeight,e.clientY-drag.y))+"px"});bar.addEventListener("pointerup",()=>drag=null);bar.addEventListener("pointercancel",()=>drag=null);win.querySelector("[data-scan]").addEventListener("click",()=>{win.querySelector(".terminal").innerHTML+="<br>SCAN COMPLETE: VIBES ARE ILLEGAL";toast("SCAN RESULT: 420 THREATS OF DANKNESS")})}toast("FAKE POP-UP STORM ACTIVATED. CANCEL REALITY TO CLOSE ALL.");}
+function closePopup(el){if(el?.classList.contains("fake-window")){el.remove();popCount++;if(popCount>=CONFIG.popupCount){state.virusSurvivor=true;save();checkAchievements();toast("VIRUS SURVIVOR: ALL FIVE WINDOWS CLOSED")}}}
+function pickRandom(legendary=false){let arr=legendary?memes.filter(m=>["Legendary","Mythical","Forbidden"].includes(m.rarity)):memes;if(!arr.length)arr=memes;return arr[Math.floor(Math.random()*arr.length)]}
+function generateRandom(){const m=pickRandom();currentMeme=m;state.discovered.includes(m.id)||state.discovered.push(m.id);save();$("#randomResult").innerHTML=`<span class="emoji">${m.emoji}</span><span class="caption">${esc(m.title.toUpperCase())}</span>`;$("#randomTitle").textContent=m.title;$("#randomCaption").textContent=captions[Math.floor(Math.random()*captions.length)];$("#randomRarity").textContent="RARITY: "+m.rarity.toUpperCase();$("#shareText").value=`${m.title} [${m.era} / ${m.rarity}]\n${$("#randomCaption").textContent}`;updateCollection();toast("DANKNESS ROLLED: "+m.rarity.toUpperCase());}
+function updateCollection(){const n=state.discovered.length;$("#collectionCount").textContent=`DISCOVERED: ${n} / ${memes.length} (${Math.round(n/memes.length*100)}%)`;$("#visitorCounter").textContent=(999999999+state.memeClicks*13+state.soundCount*7).toLocaleString("en-US")}
+function renderAchievements(){const earned=state.achievements;$("#achievementList").innerHTML=achievementsData.map(([name,desc,test])=>`<div class="panel" style="margin:0;border-color:${earned.includes(name)?"#b6ff00":"#65406f"}"><b style="color:${earned.includes(name)?"#b6ff00":"#999"}">${earned.includes(name)?"✓ ":"🔒 "}${name}</b><p style="font-size:.8rem">${desc}</p><span class="rarity">${earned.includes(name)?"UNLOCKED":"LOCKED"}</span></div>`).join("")}
+const upgrades=[["Dorito Multiplier","Dorito Multiplier",25,1,0],["Mountain Dew Reactor","Mountain Dew Reactor",120,0,1],["Illuminati GPU","Illuminati GPU",500,3,3],["Shrek Engine","Shrek Engine",1800,15,12],["9000 DPI Gaming Mouse","9000 DPI Gaming Mouse",6000,60,35],["Infinite Basement Wi-Fi","Infinite Basement Wi-Fi",20000,250,150]];
+function renderClicker(){state.points=Math.max(0,Number(state.points)||0);$("#points").textContent=Math.floor(state.points).toLocaleString();$("#ppc").textContent=state.ppc;$("#pps").textContent=state.pps;$("#upgradeShop").innerHTML=upgrades.map(([label,key,cost,click,passive])=>{const count=state.upgrades[key]||0,price=Math.floor(cost*Math.pow(1.65,count));return `<div class="settingrow" style="align-items:start"><label><b>${label}</b><br><small>+${click} click · +${passive}/sec · owned ${count}<br>Cost: ${price.toLocaleString()} MP</small></label><button class="small" data-upgrade="${key}" ${state.points<price?"disabled":""}>BUY</button></div>`}).join("")}
+function buyUpgrade(key){const u=upgrades.find(x=>x[1]===key);if(!u)return;const count=state.upgrades[key]||0,cost=Math.floor(u[2]*Math.pow(1.65,count));if(state.points<cost){$("#clickerNotice").textContent="NOT ENOUGH MEME POINTS. KEEP CLICKING.";return}state.points-=cost;state.upgrades[key]=count+1;state.ppc+=u[3];state.pps+=u[4];save();renderClicker()}
+function prestige(){if(state.points<10000){$("#clickerNotice").textContent="PRESTIGE REQUIRES 10,000 POINTS. THIS IS NOT A PONZI SCHEME.";return}if(!confirm("Reset points and upgrades for one prestige rank?"))return;state.points=0;state.ppc=1+state.prestige*2;state.pps=0;state.upgrades={};state.prestige++;save();renderClicker();toast("PRESTIGE "+state.prestige+": THE DANK ECONOMY RESETS")}
+function init(){const cats=[...new Set(memes.map(m=>m.category))].sort();$("#categoryFilter").innerHTML='<option value="">ALL CATEGORIES</option>'+cats.map(c=>`<option>${esc(c)}</option>`).join("");$("#soundGrid").innerHTML=soundNames.map((n,i)=>`<button data-sound="${esc(n)}" aria-label="Play ${esc(n)}">${soundEmoji[i]} ${esc(n)}</button>`).join("");renderGrid();renderAchievements();renderClicker();updateCollection();$("#volume").value=state.volume;$("#boardVolume").value=state.volume;$("#mute").checked=state.mute;$("#hitmarkersToggle").checked=state.hitmarkers;$("#shakeToggle").checked=state.shake;$("#flashToggle").checked=state.flash;$("#motionToggle").checked=state.reducedMotion;$("#backgroundToggle").checked=state.background;$("#soundboardToggle").checked=state.soundboard;$("#cursorMode").value=state.cursor;applySettings();$("#soundCount").textContent=sessionSounds;const fakeChats=["xX_DoritoDestroyer_Xx: ez","illuminati_admin: we know what you searched","shrek_official: somebody once told me","DefinitelyNotABot: free robux???","MLG_sniper420: MOM GET THE CAMERA","NoScopeGrandpa: back in my day memes were 144p"];$("#chatLog").innerHTML=fakeChats.map(x=>`<div>&gt; ${esc(x)}</div>`).join("");$("#healthBar").style.width=(8+Math.random()*22)+"%";$("#healthText").textContent=["CRITICAL BUT VIBRATING","HELD TOGETHER BY DUCT TAPE","GPU HAS FILED A COMPLAINT"][Math.floor(Math.random()*3)];$("#footerQuote").textContent='"'+quotes[Math.floor(Math.random()*quotes.length)]+'"';}
+function applySettings(){document.body.classList.toggle("calm",state.reducedMotion);document.body.classList.toggle("no-cancer",!state.background);document.body.style.cursor=state.cursor;$("#soundboard").classList.toggle("hidden",!state.soundboard);$("#settingsNotice").textContent="SETTINGS ACTIVE · SAVED LOCALLY WHEN AVAILABLE"}
+function saveSetting(k,v){state[k]=v;save();applySettings()}
+init();
+["search","eraFilter","categoryFilter","rarityFilter","sortBy"].forEach(id=>$("#"+id).addEventListener("input",()=>{shuffleOrder=null;renderGrid()}));
+$("#memeGrid").addEventListener("click",e=>{const b=e.target.closest("[data-action]");if(b){const id=b.dataset.id;if(b.dataset.action==="view")openMeme(id);if(b.dataset.action==="favorite")toggleFavorite(id);if(b.dataset.action==="sound"){playSound("Hitmarker");toast("NO DEDICATED CLIP SET FOR THIS MEME; GENERIC SFX PLAYED")};return}const card=e.target.closest(".meme-card");if(card)openMeme(card.dataset.id)});
+$("#memeGrid").addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.classList.contains("meme-card")){e.preventDefault();openMeme(e.target.dataset.id)}});
+$("#favoritesOnly").addEventListener("click",()=>{favoritesOnly=!favoritesOnly;$("#favoritesOnly").textContent="FAVORITES ONLY: "+(favoritesOnly?"ON":"OFF");$("#favoritesOnly").setAttribute("aria-pressed",String(favoritesOnly));renderGrid()});
+$("#clearFilters").addEventListener("click",()=>{$("#search").value="";$("#eraFilter").value="";$("#categoryFilter").value="";$("#rarityFilter").value="";$("#sortBy").value="default";favoritesOnly=false;shuffleOrder=null;$("#favoritesOnly").textContent="FAVORITES ONLY: OFF";renderGrid()});
+$("#shuffle").addEventListener("click",()=>{shuffleOrder=memes.map(m=>m.id).sort(()=>Math.random()-.5);renderGrid()});
+$("#legendary").addEventListener("click",()=>{const m=pickRandom(true);openMeme(m.id);toast("RARE DROP DETECTED: "+m.rarity.toUpperCase())});
+$("#emptyRandom").addEventListener("click",()=>openMeme(pickRandom().id));
+$("#enterStash").addEventListener("click",()=>$("#stash").scrollIntoView({behavior:state.reducedMotion?"auto":"smooth"}));
+$("#heroSearchGo").addEventListener("click",()=>{$("#search").value=$("#heroSearch").value;renderGrid();$("#stash").scrollIntoView({behavior:"smooth"})});
+$("#heroSearch").addEventListener("keydown",e=>{if(e.key==="Enter")$("#heroSearchGo").click()});
+$("#randomHero").addEventListener("click",()=>{generateRandom();$("#random").scrollIntoView({behavior:"smooth"})});
+$("#generateRandom").addEventListener("click",generateRandom);
+$("#copyRandom").addEventListener("click",async()=>{const text=$("#shareText").value;try{await navigator.clipboard.writeText(text);toast("COPIED TO CLIPBOARD")}catch(e){$("#shareText").focus();$("#shareText").select();toast("COPY BLOCKED; TEXT SELECTED FOR MANUAL COPY")}});
+$("#memeDialog").addEventListener("click",e=>{if(e.target===$("#memeDialog"))$("#memeDialog").close()});
+$("#closeModal").addEventListener("click",()=>$("#memeDialog").close());$("#closeModalTop").addEventListener("click",()=>$("#memeDialog").close());
+$("#modalFavorite").addEventListener("click",()=>currentMeme&&toggleFavorite(currentMeme.id));$("#modalSound").addEventListener("click",()=>playSound("MLG Airhorn"));
+$("#soundGrid").addEventListener("click",e=>{const b=e.target.closest("[data-sound]");if(b)playSound(b.dataset.sound)});
+$("#airhornHero").addEventListener("click",()=>playSound("MLG Airhorn"));$("#noscope").addEventListener("click",noscope);
+$("#freeMinecraft").addEventListener("click",makePopups);$("#cancelReality").addEventListener("click",()=>{$("#popupLayer").innerHTML="";state.virusSurvivor=true;save();checkAchievements();toast("REALITY RESTORED. NOTHING WAS DOWNLOADED.")});
+$("#popupLayer").addEventListener("click",e=>{const b=e.target.closest("[data-closewin]");if(b)closePopup(b.closest(".fake-window"))});
+$("#pauseMarquee").addEventListener("click",()=>{const p=$("#marquee").classList.toggle("paused");$("#pauseMarquee").textContent=p?"RESUME BANNER":"PAUSE BANNER";$("#pauseMarquee").setAttribute("aria-pressed",String(p))});
+$("#logo").addEventListener("dblclick",()=>openMeme(pickRandom().id));
+$("#visitorStat").addEventListener("click",()=>{const el=$("#visitorCounter");el.dataset.rapid=el.dataset.rapid==="1"?"0":"1";toast(el.dataset.rapid==="1"?"VISITOR COUNTER: CHAOS MODE":"VISITOR COUNTER: CALM MODE")});
+$("#visitorCounter").addEventListener("click",()=>{const el=$("#visitorCounter");el.dataset.rapid=el.dataset.rapid==="1"?"0":"1";toast("COUNTER ANIMATION "+(el.dataset.rapid==="1"?"ENABLED":"DISABLED"))});
+$("#destroyVibe").addEventListener("click",()=>{document.body.classList.add("grayscale");setTimeout(()=>document.body.classList.remove("grayscale"),1800);toast("VIBE DESTROYED. TEMPORARILY.")});
+$("#backTop").addEventListener("click",()=>window.scrollTo({top:0,behavior:state.reducedMotion?"auto":"smooth"}));
+$("#maximum").addEventListener("click",()=>{["MLG Airhorn","Hitmarker","Metal Pipe Falling","Dramatic Sting"].forEach((n,i)=>setTimeout(()=>playSound(n),i*170));showOverlay("MAXIMUM TOMFOOLERY",1000)});
+$("#stopAudio").addEventListener("click",stopAllAudio);$("#boardMute").addEventListener("click",()=>{state.mute=!state.mute;$("#mute").checked=state.mute;$("#boardMute").textContent=state.mute?"UNMUTE":"MUTE";save();if(state.mute)stopAllAudio()});
+function volumeChange(v){state.volume=Number(v);$("#volume").value=state.volume;$("#boardVolume").value=state.volume;save()}
+$("#volume").addEventListener("input",e=>volumeChange(e.target.value));$("#boardVolume").addEventListener("input",e=>volumeChange(e.target.value));
+$("#mute").addEventListener("change",e=>{saveSetting("mute",e.target.checked);$("#boardMute").textContent=state.mute?"UNMUTE":"MUTE";if(state.mute)stopAllAudio()});
+$("#hitmarkersToggle").addEventListener("change",e=>saveSetting("hitmarkers",e.target.checked));$("#shakeToggle").addEventListener("change",e=>saveSetting("shake",e.target.checked));$("#flashToggle").addEventListener("change",e=>saveSetting("flash",e.target.checked));$("#motionToggle").addEventListener("change",e=>saveSetting("reducedMotion",e.target.checked));$("#backgroundToggle").addEventListener("change",e=>saveSetting("background",e.target.checked));$("#soundboardToggle").addEventListener("change",e=>saveSetting("soundboard",e.target.checked));$("#cursorMode").addEventListener("change",e=>saveSetting("cursor",e.target.value));
+$("#tooMuch").addEventListener("click",()=>{state.reducedMotion=false;state.background=true;state.flash=true;$("#motionToggle").checked=false;$("#backgroundToggle").checked=true;$("#flashToggle").checked=true;save();applySettings();toast("TOO MUCH INTERNET ACTIVATED")});
+$("#touchGrass").addEventListener("click",()=>{state.reducedMotion=true;state.background=false;state.flash=false;$("#motionToggle").checked=true;$("#backgroundToggle").checked=false;$("#flashToggle").checked=false;save();applySettings();toast("TOUCH GRASS MODE ACTIVATED")});
+$("#resetPrefs").addEventListener("click",()=>{if(!confirm("Reset visual/audio preferences?"))return;Object.assign(state,{volume:defaults.volume,mute:false,hitmarkers:true,shake:true,flash:true,reducedMotion:matchMedia("(prefers-reduced-motion: reduce)").matches,background:true,soundboard:true,cursor:"crosshair"});save();$("#volume").value=state.volume;$("#boardVolume").value=state.volume;$("#mute").checked=state.mute;$("#hitmarkersToggle").checked=state.hitmarkers;$("#shakeToggle").checked=state.shake;$("#flashToggle").checked=state.flash;$("#motionToggle").checked=state.reducedMotion;$("#backgroundToggle").checked=state.background;$("#soundboardToggle").checked=state.soundboard;$("#cursorMode").value=state.cursor;applySettings()});
+$("#resetAchievements").addEventListener("click",()=>{if(!confirm("Reset achievement progress?"))return;state.achievements=[];save();renderAchievements();toast("ACHIEVEMENTS RESET")});
+$("#clickTarget").addEventListener("click",()=>{state.points+=state.ppc;save();renderClicker();tone({freq:500+Math.random()*300,duration:.04,type:"square",volume:.05});});
+$("#upgradeShop").addEventListener("click",e=>{const b=e.target.closest("[data-upgrade]");if(b)buyUpgrade(b.dataset.upgrade)});
+$("#prestige").addEventListener("click",prestige);$("#resetClicker").addEventListener("click",()=>{if(!confirm("Reset clicker points, upgrades, and prestige?"))return;state.points=0;state.ppc=1;state.pps=0;state.prestige=0;state.upgrades={};save();renderClicker()});
+$("#chatForm").addEventListener("submit",e=>{e.preventDefault();const val=$("#chatInput").value.trim();if(!val)return;const line=document.createElement("div");line.textContent="> YOU (LOCAL): "+val;$("#chatLog").append(line);$("#chatLog").scrollTop=$("#chatLog").scrollHeight;$("#chatInput").value="";const bots=["xX_DoritoDestroyer_Xx: ez","illuminati_admin: this conversation is stored in a potato","shrek_official: somebody once told me","DefinitelyNotABot: free robux???","NoScopeGrandpa: 144p was peak"];setTimeout(()=>{const b=document.createElement("div");b.textContent="> "+bots[Math.floor(Math.random()*bots.length)];$("#chatLog").append(b);$("#chatLog").scrollTop=$("#chatLog").scrollHeight},400)});
+document.addEventListener("click",e=>{if(!e.target.closest("button,input,select,textarea,a,dialog,.winbar"))makeHit(e.clientX,e.clientY)});
+const konami=["ArrowUp","ArrowUp","ArrowDown","ArrowDown","ArrowLeft","ArrowRight","ArrowLeft","ArrowRight","b","a"];
+document.addEventListener("keydown",e=>{if($("#memeDialog").open&&e.key==="Escape")return;if(["INPUT","TEXTAREA","SELECT"].includes(document.activeElement.tagName))return;keyBuffer.push(e.key);keyBuffer=keyBuffer.slice(-konami.length);if(keyBuffer.map(k=>k.toLowerCase()).join("|")===konami.map(k=>k.toLowerCase()).join("|")){state.konami=true;save();checkAchievements();document.body.classList.toggle("godmode");toast("GOD MODE ACTIVATED // SECRET MEME CATEGORY UNLOCKED");playSound("Darude – Sandstorm");setTimeout(()=>document.body.classList.remove("godmode"),6000)}});
+let typed="";document.addEventListener("keydown",e=>{if(["INPUT","TEXTAREA","SELECT"].includes(document.activeElement.tagName))return;if(e.key.length===1){typed=(typed+e.key.toUpperCase()).slice(-20);if(typed.endsWith("SHREK")){state.shrek=true;save();checkAchievements();showOverlay("SHREK MODE",1400);toast("SOME BODY ONCE TOLD ME")}if(typed.endsWith("DANK")){document.body.classList.add("godmode");setTimeout(()=>document.body.classList.remove("godmode"),3500);toast("TEMPORARY MLG MODE")}if(typed.endsWith("1337"))toast("ELITE GAMER BADGE UNLOCKED: 1337") }if(e.key.toLowerCase()==="f"){toast("F IN CHAT. HARAmBE MEMORIAL MOMENT.")}});
+let triangleClicks=0;document.querySelector(".f1").style.cursor="pointer";document.querySelector(".f1").addEventListener("click",()=>{triangleClicks++;if(triangleClicks>=3){triangleClicks=0;toast("ILLUMINATI TERMINAL: TRIANGLE DETECTED // TRUST NO DORITO");$("#about").scrollIntoView({behavior:"smooth"})}});
+setInterval(()=>{if($("#visitorCounter").dataset.rapid==="1")$("#visitorCounter").textContent=(Math.floor(999999999+Math.random()*9000000)).toLocaleString("en-US");if(state.pps>0){state.points+=state.pps;save();renderClicker()}},1000);
+</script>
+</body>
+</html>
